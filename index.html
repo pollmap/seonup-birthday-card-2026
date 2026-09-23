@@ -2,266 +2,387 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171a35">
-  <title>선업아 생일축하한당 ㅋㅋ 🎉</title>
-  <meta name="description" content="김선업에게 보내는 작은 별빛 생일 카드. 선업아, 생일 축하해!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#efbd43">
+  <meta name="description" content="선업아, 생일 축하해! 피카츄와 쥬피썬더가 함께 준비한 생일 카드. 이찬희 드림.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
-  <meta property="og:title" content="선업아 생일축하한당 ㅋㅋ 🎉">
-  <meta property="og:description" content="선업아, 생일 축하해! 별빛이 준비한 12초 생일 카드야.">
+  <meta property="og:title" content="선업아 생일축하한당 ㅋㅋ ⚡">
+  <meta property="og:description" content="피카츄랑 쥬피썬더도 같이 축하한다! — 이찬희 드림">
   <meta property="og:url" content="https://pollmap.github.io/seonup-birthday-card-2026/">
   <meta property="og:image" content="https://pollmap.github.io/seonup-birthday-card-2026/og-seonup.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="선업아 생일축하한당 ㅋㅋ, 별빛 생일 카드">
+  <meta property="og:image:alt" content="피카츄와 쥬피썬더, 케이크와 함께 선업아 생일축하한당 ㅋㅋ">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="선업아 생일축하한당 ㅋㅋ 🎉">
-  <meta name="twitter:description" content="김선업을 위한 작은 별빛 생일 카드">
+  <meta name="twitter:title" content="선업아 생일축하한당 ㅋㅋ ⚡">
+  <meta name="twitter:description" content="피카츄랑 쥬피썬더도 같이 축하한다! — 이찬희 드림">
   <meta name="twitter:image" content="https://pollmap.github.io/seonup-birthday-card-2026/og-seonup.png">
   <link rel="canonical" href="https://pollmap.github.io/seonup-birthday-card-2026/">
+  <link rel="preload" as="image" href="assets/pikachu.png">
+  <link rel="preload" as="image" href="assets/jolteon.png">
+  <link rel="preload" as="image" href="assets/cake.png">
+  <title>선업아 생일축하한당 ㅋㅋ ⚡</title>
   <style>
-    :root { color-scheme: dark; font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+    :root {
+      color-scheme: light;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --ink: #382312;
+      --gold: #efbd43;
+      --cream: #fff9ea;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; background: #111429; color: #faf2e4; }
-    main { width: min(100% - 24px, 650px); margin: 0 auto; padding: 26px 0 42px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-    p { margin: 0; color: #c9c8d7; line-height: 1.6; }
-    .layout { display: block; }
-    .stage { overflow: hidden; border-radius: 18px; background: #f4e3ca; box-shadow: 0 24px 80px #0008; aspect-ratio: 3/4; border: 1px solid #e7d0af; }
-    canvas { display: block; width: 100%; height: 100%; }
-    .panel { padding: 18px 0 0; }
-    button { border: 0; cursor: pointer; font: inherit; font-weight: 700; border-radius: 10px; padding: 13px 15px; transition: transform .16s, background .16s; }
-    button:hover { transform: translateY(-2px); }
-    button:disabled { opacity: .55; cursor: wait; transform: none; }
-    .primary { color: #211f32; background: #f5cc91; }
-    .primary:hover { background: #ffda9c; }
-    .secondary { color: #f9eee1; background: #3b3957; }
-    .secondary:hover { background: #504d72; }
-    .row { display: flex; gap: 10px; }
-    .row button { flex: 1; }
-    .status { font-size: 12px; margin-top: 12px; }
-    .status:empty { display: none; }
-    .progress { margin-top: 18px; height: 5px; border-radius: 99px; background: #514d69; overflow: hidden; }
-    .progress span { display: block; height: 100%; width: 0%; background: #f5cc91; transition: width .08s linear; }
-    @media (max-width: 560px) { .row { flex-wrap: wrap; } .row button { min-width: 45%; } }
+    html { min-height: 100%; }
+    body {
+      min-width: 300px;
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(10px, 3vw, 30px);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 8% 14%, #ffeeb0 0 1px, transparent 2px) 0 0 / 72px 72px,
+        radial-gradient(circle at 84% 80%, #ffdf81 0, transparent 33%),
+        radial-gradient(circle at 14% 9%, #fff3b0 0, transparent 36%),
+        #efbd43;
+      color: var(--ink);
+    }
+    button { font: inherit; }
+    .poster {
+      position: relative;
+      isolation: isolate;
+      width: min(100%, 940px);
+      height: min(760px, calc(100svh - 32px));
+      min-height: 590px;
+      display: grid;
+      grid-template-rows: minmax(172px, 27%) minmax(0, 1fr) 72px;
+      overflow: hidden;
+      border: 1px solid #fff9da;
+      border-radius: 30px;
+      background:
+        radial-gradient(ellipse at 50% 77%, #ffe3a4 0, transparent 49%),
+        radial-gradient(circle at 78% 18%, #fff0c7 0, transparent 25%),
+        linear-gradient(180deg, #fffbed 0%, #fff7e2 66%, #fce8b3 100%);
+      box-shadow: 0 28px 76px #74420830, 0 4px 12px #69420c1a, inset 0 0 0 8px #fff9e899;
+    }
+    .poster::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 13px;
+      border: 1px solid #d9ac5270;
+      border-radius: 22px;
+      pointer-events: none;
+    }
+    .headline {
+      position: relative;
+      z-index: 8;
+      align-self: center;
+      text-align: center;
+      padding: 38px 30px 0;
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .headline h1 {
+      margin: 0;
+      font-size: clamp(39px, 6.5vw, 76px);
+      font-weight: 900;
+      line-height: 1.14;
+      letter-spacing: -.078em;
+      text-wrap: balance;
+      text-shadow: 0 2px 0 #fff9df;
+    }
+    .headline h1 span { display: block; }
+    .headline h1 .accent { color: #d17914; }
+    .scene {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .scene::before {
+      content: "";
+      position: absolute;
+      left: 50%; bottom: 3%;
+      width: 78%; height: 56%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(ellipse, #ffd06470, #ffd06400 70%);
+      filter: blur(12px);
+    }
+    .scene::after {
+      content: "";
+      position: absolute;
+      left: 50%; bottom: 0;
+      width: 82%; height: 17px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: #9c6d2c36;
+      filter: blur(14px);
+    }
+    .character, .cake-wrap {
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+      will-change: transform, opacity;
+    }
+    .character img, .cake-wrap img {
+      display: block;
+      width: 100%; height: auto;
+      filter: drop-shadow(0 17px 12px #6e44132a);
+    }
+    .character { z-index: 2; width: min(32%, 292px); bottom: 7%; opacity: 0; }
+    .pikachu { left: 6%; transform: translate(-70px, 24px) rotate(-12deg); }
+    .jolteon { right: 6%; transform: translate(70px, 24px) rotate(12deg); }
+    .cake-wrap {
+      z-index: 4;
+      width: min(44%, 410px);
+      left: 50%; bottom: 0;
+      opacity: 0;
+      transform: translate(-50%, 30px) scale(.82);
+      transform-origin: 50% 85%;
+    }
+    .flame {
+      position: absolute;
+      z-index: 5;
+      width: 2.7%; height: 5%;
+      transform: translate(-50%, -105%) scale(.1);
+      opacity: 0;
+      border-radius: 80% 20% 70% 30%;
+      background: #fff9d2;
+      box-shadow: 0 0 5px 2px #fff0a0, 0 0 15px 7px #ffb228b0, 0 0 29px 14px #ffb22850;
+      rotate: 45deg;
+      pointer-events: none;
+    }
+    .flame::after {
+      content: "";
+      position: absolute;
+      inset: 28% 23% 9%;
+      border-radius: inherit;
+      background: #fff;
+    }
+    .flame:nth-of-type(1) { left: 28.5%; top: 11.2%; }
+    .flame:nth-of-type(2) { left: 38%; top: 5.2%; }
+    .flame:nth-of-type(3) { left: 49.5%; top: 11.2%; }
+    .flame:nth-of-type(4) { left: 62%; top: 5.2%; }
+    .flame:nth-of-type(5) { left: 71.5%; top: 12%; }
+    .flame.lit { opacity: 1; transform: translate(-50%, -105%) scale(1); animation: flicker 1.2s ease-in-out infinite alternate; }
+    #effects { position: absolute; z-index: 6; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .footer {
+      z-index: 8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0 32px 23px;
+    }
+    .signature {
+      margin: 0;
+      font-size: clamp(14px, 1.8vw, 18px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    .replay {
+      position: absolute;
+      right: 30px; bottom: 22px;
+      border: 1px solid #ba883c66;
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: #fff9ead6;
+      color: #66451e;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: background .2s, transform .2s;
+    }
+    .replay:hover { background: #fff; transform: translateY(-2px); }
+    .replay:focus-visible { outline: 3px solid #a75d0f; outline-offset: 3px; }
+    .poster.playing .pikachu { animation: enter-left .85s .2s cubic-bezier(.2,1.5,.42,1) forwards; }
+    .poster.playing .jolteon { animation: enter-right .85s .45s cubic-bezier(.2,1.5,.42,1) forwards; }
+    .poster.playing .cake-wrap { animation: enter-cake .95s .65s cubic-bezier(.18,1.25,.3,1) forwards; }
+    .poster.revealed .headline { animation: rise .8s cubic-bezier(.2,.8,.25,1) forwards; }
+    .poster.revealed .signature { animation: rise .65s .25s ease-out forwards; }
+    .poster.revealed .pikachu img { animation: happy-bob 2.3s ease-in-out infinite; }
+    .poster.revealed .jolteon img { animation: happy-bob 2.6s .28s ease-in-out infinite; }
+    .poster.finished .replay { opacity: 1; transform: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @keyframes enter-left { to { opacity: 1; transform: translate(0,0) rotate(-4deg); } }
+    @keyframes enter-right { to { opacity: 1; transform: translate(0,0) rotate(4deg); } }
+    @keyframes enter-cake { to { opacity: 1; transform: translate(-50%,0) scale(1); } }
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+    @keyframes happy-bob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(2deg); } }
+    @keyframes flicker { 50% { transform: translate(-50%, -112%) scale(.84, 1.18); } }
+    @media (max-width: 600px) {
+      body { padding: 8px; }
+      .poster { height: min(790px, calc(100svh - 16px)); min-height: 550px; grid-template-rows: 27% minmax(0,1fr) 67px; border-radius: 24px; }
+      .poster::before { inset: 9px; border-radius: 17px; }
+      .headline { padding: 28px 18px 0; }
+      .headline h1 { font-size: clamp(39px, 10vw, 58px); }
+      .character { width: 43%; bottom: 25%; }
+      .pikachu { left: -5%; }
+      .jolteon { right: -5%; }
+      .cake-wrap { width: 68%; bottom: 0; }
+      .footer { padding-bottom: 18px; }
+      .replay { right: 18px; bottom: 20px; padding: 8px 11px; font-size: 11px; }
+    }
+    @media (max-width: 360px) {
+      .headline h1 { font-size: 37px; }
+      .character { width: 45%; }
+      .cake-wrap { width: 71%; }
+      .signature { font-size: 13px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
+      .flame.lit { animation: none; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1 class="sr-only">김선업에게 보내는 생일 카드</h1>
-    <div class="layout">
-      <div class="stage"><canvas id="scene" width="900" height="1200" aria-label="김선업님께 전하는 별빛과 케이크 생일 축하 카드 애니메이션" role="img"></canvas></div>
-      <section class="panel" aria-label="카드 재생 및 저장">
-        <div class="row"><button id="replay" class="primary" type="button">↻ 다시 보기</button><button id="pause" class="secondary" type="button">일시정지</button><button id="download" class="secondary" type="button">영상 저장</button></div>
-        <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-        <p id="status" class="status" role="status" aria-live="polite"></p>
-      </section>
+  <main class="poster" id="poster" aria-label="김선업 생일 축하 카드">
+    <header class="headline">
+      <h1><span>선업아,</span><span class="accent">생일 축하해!</span></h1>
+    </header>
+    <div class="scene" id="scene">
+      <div class="character pikachu"><img src="assets/pikachu.png" alt="생일을 축하하는 피카츄" width="475" height="475"></div>
+      <div class="character jolteon"><img src="assets/jolteon.png" alt="생일을 축하하는 쥬피썬더" width="475" height="475"></div>
+      <div class="cake-wrap" id="cake"><img src="assets/cake.png" alt="다섯 개의 촛불이 꽂힌 생일 케이크" width="1254" height="1254"><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i><i class="flame" aria-hidden="true"></i></div>
+      <canvas id="effects" aria-hidden="true"></canvas>
     </div>
+    <footer class="footer"><p class="signature">이찬희 드림</p><button class="replay" id="replay" type="button" aria-label="생일 축하 애니메이션 다시 보기">↻ 다시 보기</button></footer>
+    <span class="sr-only" id="announcement" role="status" aria-live="polite"></span>
   </main>
   <script>
-  (() => {
-    'use strict';
-    const canvas = document.getElementById('scene');
-    const ctx = canvas.getContext('2d', { alpha: false });
-    const replayButton = document.getElementById('replay');
-    const pauseButton = document.getElementById('pause');
-    const downloadButton = document.getElementById('download');
-    const status = document.getElementById('status');
-    const progress = document.getElementById('progress');
-    const W = 900, H = 900, DURATION = 12;
-    const TAU = Math.PI * 2;
-    let time = 0, previous = 0, playing = true, recording = false, recorder = null;
-    let lastStatus = '';
-    const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
-    const smooth = (a, b, t) => { const v = clamp((t - a) / (b - a)); return v * v * (3 - 2 * v); };
-    const easeOut = v => 1 - (1 - clamp(v)) ** 3;
-    const easeBack = v => { v = clamp(v); return 1 + 2.5 * (v - 1) ** 3 + 1.5 * (v - 1) ** 2; };
-    const fract = n => n - Math.floor(n);
-    const hash = n => fract(Math.sin(n * 127.17 + 18.79) * 43758.5453);
-    const rgba = (hex, a) => { const h = hex.replace('#', ''); const n = parseInt(h, 16); return `rgba(${n >> 16},${n >> 8 & 255},${n & 255},${a})`; };
-    function setStatus(message) { if (message !== lastStatus) { status.textContent = message; lastStatus = message; } }
-    function roundedRect(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); }
-    function circle(x, y, r, fill) { ctx.beginPath(); ctx.arc(x, y, Math.max(0, r), 0, TAU); ctx.fillStyle = fill; ctx.fill(); }
-    function ellipse(x, y, rx, ry, fill) { ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, TAU); ctx.fillStyle = fill; ctx.fill(); }
-    function line(x1, y1, x2, y2, color, width = 2) { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = 'round'; ctx.stroke(); }
-    function polygon(points, fill, stroke, width = 2) { ctx.beginPath(); ctx.moveTo(points[0][0], points[0][1]); for (let i = 1; i < points.length; i++) ctx.lineTo(points[i][0], points[i][1]); ctx.closePath(); ctx.fillStyle = fill; ctx.fill(); if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width; ctx.lineJoin = 'round'; ctx.stroke(); } }
-    function text(str, x, y, size, color, align = 'center', weight = 700, alpha = 1, maxWidth) {
-      ctx.save(); ctx.globalAlpha = alpha; ctx.fillStyle = color; ctx.font = `${weight} ${size}px "Malgun Gothic", "Apple SD Gothic Neo", sans-serif`;
-      ctx.textAlign = align; ctx.textBaseline = 'middle';
-      if (maxWidth === undefined) ctx.fillText(str, x, y); else ctx.fillText(str, x, y, maxWidth);
-      ctx.restore();
-    }
-    const stars = Array.from({ length: 88 }, (_, i) => ({ x: 30 + hash(i + 1) * 840, y: 24 + hash(i + 101) * 480, r: 1 + hash(i + 204) * 2.1, phase: hash(i + 305) * TAU }));
-    const confetti = Array.from({ length: 48 }, (_, i) => ({ x: hash(i + 401) * W, delay: hash(i + 515) * 2.4, speed: 80 + hash(i + 607) * 110, drift: (hash(i + 711) - .5) * 85, rot: hash(i + 812) * TAU, size: 4 + hash(i + 905) * 7, color: ['#f5c77d', '#f4a4aa', '#87c8c4', '#d8c2e8'][i % 4] }));
-    function grain() {
-      const g = document.createElement('canvas'); g.width = g.height = 220;
-      const gc = g.getContext('2d'); const img = gc.createImageData(220, 220);
-      for (let i = 0; i < img.data.length; i += 4) { const v = hash(i + 1303) > .55 ? 255 : 0; img.data[i] = img.data[i + 1] = img.data[i + 2] = v; img.data[i + 3] = 12; }
-      gc.putImageData(img, 0, 0); return g;
-    }
-    const noise = grain();
-    function background(t) {
-      const grad = ctx.createLinearGradient(0, 0, 0, H); grad.addColorStop(0, '#172039'); grad.addColorStop(.55, '#3a3358'); grad.addColorStop(1, '#68516a');
-      ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
-      const aura = ctx.createRadialGradient(455, 325, 8, 455, 325, 510); aura.addColorStop(0, 'rgba(244,188,139,.26)'); aura.addColorStop(1, 'rgba(244,188,139,0)'); ctx.fillStyle = aura; ctx.fillRect(0, 0, W, H);
-      stars.forEach(s => { const a = .28 + .46 * (.5 + .5 * Math.sin(t * 1.5 + s.phase)); circle(s.x, s.y, s.r, `rgba(255,235,209,${a})`); });
-      ctx.fillStyle = '#5b4b6b'; ctx.beginPath(); ctx.moveTo(0, 670); ctx.bezierCurveTo(180, 590, 340, 655, 470, 626); ctx.bezierCurveTo(640, 583, 730, 625, 900, 558); ctx.lineTo(900, 900); ctx.lineTo(0, 900); ctx.fill();
-      ctx.fillStyle = '#443c5d'; ctx.beginPath(); ctx.moveTo(0, 720); ctx.bezierCurveTo(185, 650, 340, 708, 470, 682); ctx.bezierCurveTo(670, 647, 775, 715, 900, 655); ctx.lineTo(900, 900); ctx.lineTo(0, 900); ctx.fill();
-      ctx.fillStyle = '#322e4d'; ctx.fillRect(0, 754, 900, 146);
-      ctx.save(); ctx.globalAlpha = .75; ctx.drawImage(noise, 0, 0, W, H); ctx.restore();
-    }
-    function sparkle(x, y, r, alpha = 1) {
-      ctx.save(); ctx.globalAlpha = alpha; ctx.strokeStyle = '#fff4d4'; ctx.lineWidth = 3; ctx.lineCap = 'round';
-      line(x - r, y, x + r, y, '#fff4d4', 3); line(x, y - r, x, y + r, '#fff4d4', 3);
-      circle(x, y, Math.max(1, r * .16), '#fff9df'); ctx.restore();
-    }
-    function moon(t) {
-      const rise = smooth(.2, 1.7, t); const y = 178 + (1 - rise) * 120;
-      circle(750, y, 92, 'rgba(255,211,150,.07)'); circle(750, y, 67, 'rgba(255,218,166,.13)');
-      circle(750, y, 49, '#f8d39d');
-      circle(734, y - 14, 5, '#e9b87f'); circle(774, y + 15, 8, '#e9b87f'); circle(750, y + 30, 4, '#e9b87f');
-    }
-    function comet(t) {
-      const p = smooth(.9, 3.5, t); if (p <= 0 || p >= 1) return;
-      const x = -75 + 1050 * p, y = 460 - 220 * Math.sin(Math.PI * p) - 60 * p;
-      ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * p);
-      for (let i = 9; i >= 0; i--) { const q = clamp(p - i * .012); const tx = -75 + 1050 * q, ty = 460 - 220 * Math.sin(Math.PI * q) - 60 * q; circle(tx, ty, 3 + (9 - i) * .8, `rgba(251,204,150,${.045 + (9 - i) * .014})`); }
-      const glow = ctx.createRadialGradient(x, y, 2, x, y, 60); glow.addColorStop(0, 'rgba(255,239,174,.85)'); glow.addColorStop(1, 'rgba(255,239,174,0)'); circle(x, y, 60, glow); sparkle(x, y, 19); ctx.restore();
-    }
-    function pikachu(t) {
-      const p = smooth(2.2, 3.4, t); if (!p) return;
-      ctx.save(); ctx.globalAlpha = p; ctx.translate(142 - (1 - easeOut(p)) * 245, 667 + Math.sin(t * 4) * 4); ctx.scale(.88, .88);
-      const yellow = '#f8ce48', outline = '#765743';
-      polygon([[47, 18], [106, -31], [76, -31], [120, -93], [84, -72], [104, -117], [34, -55]], yellow, outline, 4);
-      ellipse(0, 31, 74, 83, yellow); ellipse(-43, 99, 30, 14, yellow); ellipse(45, 99, 30, 14, yellow);
-      ctx.save(); ctx.translate(-61, -2); ctx.rotate(-.15 - .24 * Math.sin(t * 5)); ellipse(0, -19, 22, 47, yellow); ctx.restore();
-      ctx.save(); ctx.translate(62, -8); ctx.rotate(.28 + .3 * Math.sin(t * 5)); ellipse(0, -18, 22, 47, yellow); ctx.restore();
-      polygon([[-65, -128], [-81, -259], [-35, -190], [-21, -139]], yellow, outline, 4);
-      polygon([[37, -140], [86, -246], [80, -120], [62, -112]], yellow, outline, 4);
-      polygon([[-79, -251], [-81, -259], [-62, -230], [-66, -214], [-77, -235]], '#3b3342');
-      polygon([[75, -223], [86, -246], [84, -202], [76, -180]], '#3b3342');
-      ellipse(0, -101, 75, 66, yellow);
-      ellipse(-56, -75, 18, 16, '#e76b68'); ellipse(56, -75, 18, 16, '#e76b68');
-      ellipse(-29, -112, 8, 11, '#282936'); ellipse(29, -112, 8, 11, '#282936');
-      circle(-31, -116, 2.5, '#fff8e8'); circle(27, -116, 2.5, '#fff8e8');
-      circle(0, -91, 5, '#3a3038');
-      ctx.beginPath(); ctx.moveTo(-15, -78); ctx.quadraticCurveTo(0, -63, 15, -78); ctx.strokeStyle = '#6a4645'; ctx.lineWidth = 3; ctx.stroke();
-      ctx.restore();
-    }
-    function jolteon(t) {
-      const p = smooth(2.3, 3.5, t); if (!p) return;
-      ctx.save(); ctx.globalAlpha = p; ctx.translate(755 + (1 - easeOut(p)) * 245, 671 + Math.sin(t * 4.5 + 1) * 4); ctx.scale(.88, .88);
-      const yellow = '#f6c744', dark = '#514255';
-      polygon([[56, 23], [100, -11], [84, 19], [139, -12], [104, 36], [138, 43], [76, 59]], yellow, dark, 3);
-      polygon([[-58, 80], [-83, 31], [-73, -36], [-105, -53], [-67, -60], [-86, -93], [-38, -85], [0, -92], [48, -73], [83, -27], [76, 68], [55, 91]], yellow, dark, 3);
-      ellipse(-42, 93, 27, 14, yellow); ellipse(52, 92, 27, 14, yellow);
-      polygon([[-58, -147], [-76, -260], [-18, -180], [-20, -129]], yellow, dark, 3);
-      polygon([[27, -139], [79, -249], [70, -125], [45, -115]], yellow, dark, 3);
-      polygon([[-71, -234], [-65, -194], [-34, -167], [-52, -205]], '#484053');
-      polygon([[66, -221], [42, -172], [57, -159], [72, -197]], '#484053');
-      polygon([[-72, -127], [-94, -107], [-73, -89], [-91, -67], [-59, -62], [-50, -43], [-15, -51], [0, -45], [43, -51], [67, -67], [94, -81], [73, -96], [85, -117], [52, -129], [36, -156], [0, -139], [-33, -159]], yellow, dark, 3);
-      polygon([[-62, -46], [-93, -34], [-67, -16], [-92, 5], [-53, 1], [-61, 30], [-21, 12], [0, 44], [21, 12], [62, 27], [56, 1], [92, 5], [63, -17], [91, -36], [59, -49], [30, -39], [0, -55], [-29, -39]], '#fff3dc', '#b9a88f', 3);
-      ellipse(-30, -106, 7, 10, '#2c2938'); ellipse(31, -106, 7, 10, '#2c2938');
-      circle(-32, -110, 2.3, '#fff'); circle(29, -110, 2.3, '#fff');
-      circle(0, -84, 5, '#3c3440');
-      ctx.beginPath(); ctx.moveTo(-10, -72); ctx.quadraticCurveTo(0, -62, 10, -72); ctx.strokeStyle = '#514255'; ctx.lineWidth = 2.5; ctx.stroke();
-      ctx.restore();
-    }
-    function electricWish(t) {
-      const a = smooth(4.25, 4.55, t) * (1 - smooth(5.75, 6.15, t)); if (!a) return;
-      ctx.save(); ctx.globalAlpha = a * (.75 + .25 * Math.sin(t * 25)); ctx.strokeStyle = '#ffe27d'; ctx.lineWidth = 7; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.shadowColor = '#ffe99a'; ctx.shadowBlur = 24;
-      ctx.beginPath(); ctx.moveTo(210, 550); ctx.lineTo(251, 504); ctx.lineTo(239, 492); ctx.lineTo(313, 431); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(690, 545); ctx.lineTo(654, 509); ctx.lineTo(666, 495); ctx.lineTo(588, 431); ctx.stroke();
-      sparkle(313, 427, 12, a); sparkle(588, 427, 12, a); ctx.restore();
-    }
-    function cake(t) {
-      const p = smooth(3.25, 4.65, t); if (!p) return;
-      const offset = (1 - easeBack(p)) * 480;
-      ctx.save(); ctx.translate(0, offset);
-      ellipse(450, 754, 313, 37, '#28274166');
-      ellipse(450, 720, 273, 37, '#cec0ba'); ellipse(450, 711, 271, 36, '#f9e8d1');
-      ctx.fillStyle = '#bc7883'; roundedRect(214, 523, 472, 167, [18, 18, 24, 24]); ctx.fill();
-      ctx.fillStyle = '#eeb5af'; ctx.fillRect(228, 561, 444, 16); ctx.fillStyle = '#f8c7b8'; ctx.fillRect(228, 623, 444, 13);
-      ctx.fillStyle = '#e9a2a5'; roundedRect(206, 508, 488, 79, [28, 28, 12, 12]); ctx.fill();
-      ctx.fillStyle = '#fff0d6'; ctx.beginPath(); ctx.moveTo(220, 512); ctx.lineTo(680, 512); ctx.lineTo(680, 540);
-      for (let i = 0; i < 8; i++) { const x = 680 - i * 57; ctx.bezierCurveTo(x - 10, 551 + (i % 3) * 6, x - 14, 573 - (i % 2) * 11, x - 29, 555); ctx.bezierCurveTo(x - 39, 541, x - 43, 531, x - 57, 540); }
-      ctx.lineTo(220, 512); ctx.fill();
-      ellipse(450, 509, 244, 31, '#fff5dd');
-      for (let i = 0; i < 23; i++) { const x = 244 + hash(i + 2500) * 410; const y = 528 + hash(i + 2600) * 138; if (y > 545 && y < 655) { ctx.save(); ctx.translate(x, y); ctx.rotate(hash(i + 2700) * 4); roundedRect(-3, -8, 6, 16, 2); ctx.fillStyle = ['#f5d38f', '#e7eef0', '#8dc4bc'][i % 3]; ctx.fill(); ctx.restore(); } }
-      for (let i = 0; i < 5; i++) {
-        const x = 316 + i * 67, y = 440 + (i % 2) * 8;
-        ctx.fillStyle = ['#ebaa9e', '#98c9c3', '#dab8dd', '#f1c17f', '#91b7c9'][i]; roundedRect(x - 8, y, 16, 69, 4); ctx.fill();
-        line(x - 8, y + 21, x + 8, y + 21, '#fff2d3', 3); line(x, y - 7, x, y + 2, '#57465b', 3);
-        const light = smooth(4.65 + i * .28, 5.05 + i * .28, t);
-        if (light) { ctx.save(); ctx.globalAlpha = light; const wobble = Math.sin(t * 10 + i * 2) * 3; const flameY = y - 19; const g = ctx.createRadialGradient(x, flameY, 3, x, flameY, 56); g.addColorStop(0, 'rgba(255,221,139,.56)'); g.addColorStop(1, 'rgba(255,221,139,0)'); circle(x, flameY, 56, g); ctx.beginPath(); ctx.moveTo(x, flameY - 20 + wobble); ctx.bezierCurveTo(x - 17, flameY + 3, x - 7, flameY + 13, x, flameY + 11); ctx.bezierCurveTo(x + 16, flameY + 6, x + 12, flameY - 7, x, flameY - 20 + wobble); ctx.fillStyle = '#ffc064'; ctx.fill(); circle(x, flameY + 1, 5, '#fff2b6'); ctx.restore(); }
+    (() => {
+      const poster = document.getElementById('poster');
+      const scene = document.getElementById('scene');
+      const cake = document.getElementById('cake');
+      const canvas = document.getElementById('effects');
+      const replay = document.getElementById('replay');
+      const announcement = document.getElementById('announcement');
+      const flames = [...document.querySelectorAll('.flame')];
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+      const ctx = canvas.getContext('2d');
+      let timers = [];
+      let frame = 0;
+      let burstAt = 0;
+      let particles = [];
+      let dimension = { width: 0, height: 0, dpr: 1 };
+      const later = (callback, ms) => timers.push(setTimeout(callback, ms));
+      function resize() {
+        const rect = scene.getBoundingClientRect();
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        dimension = { width: rect.width, height: rect.height, dpr };
+        canvas.width = Math.round(rect.width * dpr);
+        canvas.height = Math.round(rect.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
-      ctx.restore();
-    }
-    function confettiDraw(t) {
-      if (t < 6.6) return;
-      ctx.save(); ctx.globalAlpha = smooth(6.6, 7.1, t);
-      confetti.forEach((c, i) => { const dt = t - 6.6 - c.delay; if (dt < 0) return; const y = ((dt * c.speed) % 930) - 25; const x = c.x + c.drift * Math.sin(dt * 1.5 + i); ctx.save(); ctx.translate(x, y); ctx.rotate(c.rot + dt * (i % 2 ? 1.5 : -1.5)); ctx.fillStyle = c.color; roundedRect(-c.size / 2, -c.size / 2, c.size, c.size * .64, 1); ctx.fill(); ctx.restore(); });
-      ctx.restore();
-    }
-    function letters(t) {
-      if (t < 6.15) return;
-      const words = '선업아, 생일 축하해!';
-      ctx.save(); ctx.shadowColor = '#1f203c88'; ctx.shadowBlur = 12; ctx.shadowOffsetY = 8;
-      ctx.font = '800 70px "Malgun Gothic", "Apple SD Gothic Neo", sans-serif';
-      const chars = [...words], widths = chars.map(ch => ctx.measureText(ch).width + 3); const total = widths.reduce((a, b) => a + b, 0); let x = (W - total) / 2;
-      chars.forEach((ch, i) => { const p = smooth(6.2 + i * .08, 6.75 + i * .08, t); ctx.save(); ctx.globalAlpha = p; ctx.translate(x + widths[i] / 2, 292 - 32 * (1 - easeOut(p))); ctx.scale(.65 + .35 * easeBack(p), .65 + .35 * easeBack(p)); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#fff3d9'; ctx.fillText(ch, 0, 0); ctx.restore(); x += widths[i]; });
-      ctx.restore();
-      if (t >= 9.2) { const a = smooth(9.2, 10.2, t) * (.8 + .2 * Math.sin(t * 2)); sparkle(148, 290, 10, a); sparkle(765, 290, 10, a); }
-    }
-    function draw(t) {
-      ctx.clearRect(0, 0, W, 1200);
-      ctx.fillStyle = '#f4e3ca'; ctx.fillRect(0, 0, W, 1200);
-      ctx.fillStyle = '#e8d0ae'; ctx.fillRect(0, 140, W, 10); ctx.fillRect(0, 1050, W, 10);
-      text('TO. 김선업', 450, 75, 51, '#47364e', 'center', 800);
-      sparkle(173, 76, 10, .5); sparkle(727, 76, 10, .5);
-      ctx.save(); ctx.translate(0, 150);
-      background(t); moon(t); comet(t);
-      pikachu(t); jolteon(t); cake(t); electricWish(t); confettiDraw(t); letters(t);
-      ctx.save(); ctx.globalAlpha = .055; ctx.drawImage(noise, 0, 0, W, H); ctx.restore();
-      ctx.restore();
-      text('이찬희 드림', 754, 1128, 30, '#493a50', 'right', 650);
-    }
-    function tick(now) {
-      if (!previous) previous = now;
-      const dt = Math.min((now - previous) / 1000, .08); previous = now;
-      if (playing) { time += dt; if (time >= DURATION) { if (recording) { time = DURATION; playing = false; recorder?.stop(); } else time %= DURATION; } }
-      draw(time); progress.style.width = `${time / DURATION * 100}%`;
-      requestAnimationFrame(tick);
-    }
-    replayButton.addEventListener('click', () => { time = 0; playing = true; previous = 0; pauseButton.textContent = '일시정지'; setStatus('처음부터 재생 중입니다.'); });
-    pauseButton.addEventListener('click', () => { if (recording) return; playing = !playing; pauseButton.textContent = playing ? '일시정지' : '계속 재생'; setStatus(playing ? '재생 중입니다.' : '일시정지했습니다.'); });
-    downloadButton.addEventListener('click', () => {
-      if (recording) return;
-      if (!canvas.captureStream || !window.MediaRecorder) { setStatus('이 브라우저는 영상 저장을 지원하지 않습니다. Chrome 또는 Edge에서 열어주세요.'); return; }
-      const mime = ['video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'].find(m => MediaRecorder.isTypeSupported(m));
-      if (!mime) { setStatus('WebM 저장을 지원하지 않는 브라우저입니다.'); return; }
-      try {
-        const stream = canvas.captureStream(30), chunks = [];
-        recorder = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 5_000_000 });
-        recorder.ondataavailable = e => { if (e.data?.size) chunks.push(e.data); };
-        recorder.onerror = () => { recording = false; playing = true; downloadButton.disabled = false; stream.getTracks().forEach(track => track.stop()); setStatus('영상 저장 중 오류가 발생했습니다. 다시 시도해주세요.'); };
-        recorder.onstop = () => {
-          const blob = new Blob(chunks, { type: mime });
-          stream.getTracks().forEach(track => track.stop());
-          recording = false; downloadButton.disabled = false; playing = true; time = 0;
-          if (!blob.size) { setStatus('영상 파일을 만들지 못했습니다. 다시 시도해주세요.'); return; }
-          const url = URL.createObjectURL(blob); const link = document.createElement('a');
-          link.href = url; link.download = '김선업_생일카드.webm'; document.body.append(link); link.click(); link.remove();
-          setTimeout(() => URL.revokeObjectURL(url), 60_000);
-          setStatus('12초 영상이 저장되었습니다.');
-        };
-        recording = true; downloadButton.disabled = true; time = 0; previous = 0; playing = true; pauseButton.textContent = '일시정지';
-        recorder.start(); setStatus('12초 영상을 만드는 중입니다. 화면을 켜두세요.');
-      } catch (error) { recording = false; downloadButton.disabled = false; setStatus('영상 저장을 시작하지 못했습니다. 다른 브라우저에서 다시 시도해주세요.'); }
-    });
-    draw(0); requestAnimationFrame(tick);
-  })();
+      function bolt(points, alpha, width) {
+        ctx.beginPath();
+        ctx.moveTo(points[0][0], points[0][1]);
+        points.slice(1).forEach(([x, y]) => ctx.lineTo(x, y));
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = `rgba(255,175,34,${alpha})`;
+        ctx.strokeStyle = `rgba(255,190,49,${alpha * .75})`;
+        ctx.lineWidth = width * 3;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = `rgba(255,255,222,${alpha})`;
+        ctx.lineWidth = width;
+        ctx.stroke();
+      }
+      function paint(now) {
+        frame = requestAnimationFrame(paint);
+        const { width, height } = dimension;
+        ctx.clearRect(0, 0, width, height);
+        const elapsed = now - burstAt;
+        if (elapsed < 1100) {
+          const energy = Math.min(1, elapsed / 170) * Math.max(0, 1 - elapsed / 1100);
+          const target = [width * .5, height * .45];
+          const left = [width * .18, height * .43];
+          const right = [width * .82, height * .43];
+          [left, right].forEach((start, side) => {
+            for (let branch = 0; branch < 2; branch++) {
+              const points = [start];
+              for (let step = 1; step < 7; step++) {
+                const t = step / 7;
+                const wave = Math.sin(step * 2.7 + Math.floor(elapsed / 70) * 3 + side * 4 + branch) * (11 + branch * 7);
+                points.push([start[0] + (target[0] - start[0]) * t, start[1] + (target[1] - start[1]) * t + wave]);
+              }
+              points.push(target);
+              bolt(points, energy * (branch ? .45 : .94), branch ? 2 : 3.4);
+            }
+          });
+        }
+        particles = particles.filter(p => now - p.born < p.life);
+        for (const p of particles) {
+          const t = (now - p.born) / p.life;
+          ctx.save();
+          ctx.translate(p.x + p.vx * t, p.y + p.vy * t + 100 * t * t);
+          ctx.rotate(p.rotation + t * p.spin);
+          ctx.globalAlpha = Math.min(1, (1 - t) * 2.3);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 1.7);
+          ctx.restore();
+        }
+        if (elapsed >= 1100 && particles.length === 0) { cancelAnimationFrame(frame); frame = 0; ctx.clearRect(0, 0, width, height); }
+      }
+      function burst() {
+        if (!ctx || reduced.matches) return;
+        resize();
+        const rect = cake.getBoundingClientRect();
+        const stage = scene.getBoundingClientRect();
+        const cx = rect.left - stage.left + rect.width / 2;
+        const cy = rect.top - stage.top + rect.height * .31;
+        const colors = ['#e99c22', '#f4c545', '#fff8d5', '#d7773c', '#edb5a0'];
+        const now = performance.now();
+        particles = Array.from({ length: 54 }, (_, i) => {
+          const angle = i * 2.39996;
+          const speed = 85 + (i % 7) * 16;
+          return { x: cx, y: cy, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed - 95,
+            size: 3 + i % 4, rotation: angle, spin: (i % 2 ? -1 : 1) * (2 + i % 5),
+            born: now, life: 1250 + i % 5 * 100, color: colors[i % colors.length] };
+        });
+        burstAt = now;
+        if (frame) cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(paint);
+      }
+      function reset() {
+        timers.forEach(clearTimeout); timers = [];
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
+        particles = [];
+        if (ctx) ctx.clearRect(0, 0, dimension.width, dimension.height);
+        flames.forEach(flame => flame.classList.remove('lit'));
+        poster.classList.remove('playing', 'revealed', 'finished');
+        announcement.textContent = '';
+        void poster.offsetWidth;
+      }
+      function start() {
+        reset();
+        if (reduced.matches) {
+          poster.classList.add('playing', 'revealed', 'finished');
+          flames.forEach(flame => flame.classList.add('lit'));
+          announcement.textContent = '선업아, 생일 축하해! 이찬희 드림';
+          return;
+        }
+        poster.classList.add('playing');
+        flames.forEach((flame, index) => later(() => flame.classList.add('lit'), 1770 + index * 90));
+        later(burst, 2160);
+        later(() => { poster.classList.add('revealed'); announcement.textContent = '선업아, 생일 축하해! 이찬희 드림'; }, 2550);
+        later(() => poster.classList.add('finished'), 3450);
+      }
+      replay.addEventListener('click', start);
+      window.addEventListener('resize', resize, { passive: true });
+      resize();
+      Promise.all([...document.images].map(img => img.complete ? Promise.resolve() : new Promise(resolve => { img.addEventListener('load', resolve, { once: true }); img.addEventListener('error', resolve, { once: true }); }))).then(start);
+    })();
   </script>
 </body>
 </html>
