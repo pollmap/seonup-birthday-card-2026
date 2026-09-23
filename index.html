@@ -53,7 +53,7 @@
       position: relative;
       isolation: isolate;
       width: min(100%, 940px);
-      height: min(760px, calc(100svh - 32px));
+      height: min(760px, calc(100svh - 60px));
       min-height: 590px;
       display: grid;
       grid-template-rows: minmax(172px, 27%) minmax(0, 1fr) 72px;
@@ -219,21 +219,21 @@
     @keyframes flicker { 50% { transform: translate(-50%, -112%) scale(.84, 1.18); } }
     @media (max-width: 600px) {
       body { padding: 8px; }
-      .poster { height: min(790px, calc(100svh - 16px)); min-height: 550px; grid-template-rows: 27% minmax(0,1fr) 67px; border-radius: 24px; }
+      .poster { height: min(640px, calc(100svh - 16px)); min-height: 550px; grid-template-rows: 27% minmax(0,1fr) 67px; border-radius: 24px; }
       .poster::before { inset: 9px; border-radius: 17px; }
       .headline { padding: 28px 18px 0; }
       .headline h1 { font-size: clamp(39px, 10vw, 58px); }
-      .character { width: 43%; bottom: 25%; }
+      .character { width: 47%; bottom: 22%; }
       .pikachu { left: -5%; }
       .jolteon { right: -5%; }
-      .cake-wrap { width: 68%; bottom: 0; }
+      .cake-wrap { width: 78%; bottom: 0; }
       .footer { padding-bottom: 18px; }
       .replay { right: 18px; bottom: 20px; padding: 8px 11px; font-size: 11px; }
     }
     @media (max-width: 360px) {
       .headline h1 { font-size: 37px; }
-      .character { width: 45%; }
-      .cake-wrap { width: 71%; }
+      .character { width: 48%; }
+      .cake-wrap { width: 79%; }
       .signature { font-size: 13px; }
     }
     @media (prefers-reduced-motion: reduce) {
